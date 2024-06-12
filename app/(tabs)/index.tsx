@@ -1,51 +1,34 @@
-import React, { useState } from 'react'
-import { View, StyleSheet, TextInput } from 'react-native'
+import React from 'react';
+import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 
 const App = () => {
-  const [name, setName] = useState()
-  const [age, setAge] = useState()
-  const [question, setQuestion] = useState()
+  const [count, setCount] = React.useState(0);
+  const onPress = () => setCount(count + 1);
 
   return (
-    <View>
-      <TextInput
-        style={styles.input}
-        placeholder="Masukan Nama"
-        onChangeText={setName}
-        value={name}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Masukan Umur"
-        onChangeText={setAge}
-        value={age}
-        keyboardType="numeric"
-      />
-      <TextInput
-        style={styles.multiLineInput}
-        placeholder="Masukan pertanyaan"
-        multiline={true}
-        numberOfLines={3}
-        onChangeText={setQuestion}
-        value={question}
-      />
+    <View style={styles.container}>
+      <Text>You clicked {count} times</Text>
+      <TouchableOpacity style={styles.button} onPress={onPress}>
+        <Text style={styles.buttonText}>Press Here</Text>
+      </TouchableOpacity>
     </View>
-  )
-}
+  );
+};
 
 const styles = StyleSheet.create({
-  input: {
-    height: 60,
-    margin: 12,
-    borderWidth: 1,
-    padding: 10,
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  multiLineInput: {
-    height: 100,
-    margin: 12,
-    borderWidth: 1,
+  button: {
+    backgroundColor: '#674f74',
     padding: 10,
+    marginVertical: 10,
   },
-})
+  buttonText: {
+    color: '#FFF',
+  },
+});
 
-export default App
+export default App;
