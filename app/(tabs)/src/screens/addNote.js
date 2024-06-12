@@ -35,10 +35,10 @@ const AddNote = ({ setCurrentPage, addNote }) => {
                     width="100%"
                     // Jalankan function addNote dan arahkan kembali layar ke Home
                     onPress={() => {
-                      addNote(title, desc)
-                      setCurrentPage('home')
+                        addNote(title, desc)
+                        setCurrentPage('home')
                     }}
-                  />
+                />
             </View>
             <View style={styles.spacerTop}>
                 <CustomButton
@@ -49,8 +49,8 @@ const AddNote = ({ setCurrentPage, addNote }) => {
                     onPress={() => setCurrentPage('home')}
                 />
             </View>
-            
-          
+
+
         </View >
     )
 }
